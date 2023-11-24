@@ -13,7 +13,8 @@ public class HelloWorld extends Application{
     public void start(Stage stage) throws Exception {
         stage.setTitle("Hello world");
         Group root = new Group();
-        Scene scene = new Scene(root, 600, 400);
+        Camera camera = new Camera(100, 250);
+        GameScene scene = new GameScene(root, 0, 0);
 
         stage.setScene(scene);
         stage.show();
@@ -25,18 +26,10 @@ public class HelloWorld extends Application{
         sprite.setY(300);
 
         root.getChildren().add(sprite);
-
-        GameScene gameScene = new GameScene(150, 200);
-
-
     }
 
     public static void  main(String[] args){
         launch(args);
-        Camera cam1 = new Camera(5, 10);
-        System.out.println("La Caméra est placée aux coordonés " + cam1);
-        System.out.println("La coordonnée x a pour valeur " + cam1.getX());
-        System.out.println("La coordonnée y a pour valeur " + cam1.getY());
 
     }
 }

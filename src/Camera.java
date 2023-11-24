@@ -5,7 +5,6 @@ public class Camera {
         this.x = x;
         this.y = y;
     }
-
     public int getX() {
         return x;
     }
@@ -18,5 +17,4 @@ public class Camera {
     public String toString(){
         return String.valueOf(x + " , " + y);
     }
-
 }
