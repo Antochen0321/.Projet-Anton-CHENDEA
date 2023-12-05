@@ -14,18 +14,17 @@ public class HelloWorld extends Application{
         stage.setTitle("Hello world");
         Group root = new Group();
         Camera camera = new Camera(100, 250);
-        GameScene scene = new GameScene(root, 0, 0);
-
+        GameScene scene = new GameScene(root, 800, 400, 1000, 400);
+        if(scene.getNumberOfLives() < 3){
+            root.getChildren().remove(root);
+        }
         stage.setScene(scene);
         stage.show();
-
-        Image spriteSheet = new Image("file:/Users/anaua/IdeaProjects/Projet Runner/img/heros.png");
-        ImageView sprite = new ImageView(spriteSheet);
-        sprite.setViewport(new Rectangle2D(20,0,65,100));
-        sprite.setX(200);
-        sprite.setY(300);
-
-        root.getChildren().add(sprite);
+        if (scene.getNumberOfLives() == 0) {
+            root.getChildren().removeAll();
+            GameOverScene gameOverScene = new GameOverScene(new Group(), 800, 400);
+            stage.setScene(gameOverScene);
+        }
     }
 
     public static void  main(String[] args){
