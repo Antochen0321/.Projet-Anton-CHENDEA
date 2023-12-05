@@ -1,15 +1,16 @@
 public class Camera {
-    private final int x;
-    private final int y;
-    public Camera(int x, int y){
+    private double x;
+    private double y;
+    public Camera(double x, double y){
         this.x = x;
         this.y = y;
     }
-    public int getX() {
+    public double getX() {
         return x;
     }
-
-    public int getY() {
+    public void setX(double nx){this.x = nx;}
+    public void setY(double ny){this.y = ny;}
+    public double getY() {
         return y;
     }
 
